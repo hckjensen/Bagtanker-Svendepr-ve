@@ -1,10 +1,13 @@
-import Layout from "./Layout"
+import { useParams } from 'react-router-dom'
 
 const ProductsPage = () => {
 
+    const { category } = useParams()
+
     return (
         <>
-            <Layout />
+
+            <h3>{category}</h3>
         </>
     )
 }

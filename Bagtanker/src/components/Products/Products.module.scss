@@ -1,0 +1,15 @@
+@use "../../styles/variables" as *;
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 40px 120px;
+    text-transform: capitalize;
+
+    .productGrid {
+        display: grid;
+        grid-template-columns: repeat(2 1fr)
+    }
+}

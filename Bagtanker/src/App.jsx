@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Layout from './pages/Layout'
 import LandingPage from './pages/LandingPage'
-import ProductsPage from './pages/ProductsPage'
+import ProductList from './components/Products/ProductList'
 
 import './App.scss'
 
@@ -12,16 +12,15 @@ function App() {
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/home" element={<Layout />}>
-              {/* <Route index element={<ProductsPage />} /> */}
-              <Route path="products" element={<ProductsPage />}>
-                <Route path=":category" element={<ProductsPage />}>
-                  <Route path=":productId" element={<ProductsPage />} />
-                </Route>
+          <Route path="/" element={<LandingPage />} />
+          <Route path=":home" element={<Layout />}>
+            <Route path=":produkter" element={<ProductList />}>
+              <Route path=":category" element={<ProductList />}>
+                <Route path=":productId" element={<ProductList />} />
               </Route>
             </Route>
           </Route>
+
         </Routes>
       </Router>
     </>

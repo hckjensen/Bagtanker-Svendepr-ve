@@ -1,0 +1,94 @@
+@use "../../styles/variables" as *;
+
+
+.footer {
+    margin-top: 20px;
+
+    background-color: $dark-grey;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 120px;
+    padding-bottom: 80px;
+
+    .footerSection {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 300px;
+
+        .text {
+
+            div {
+                margin-top: 40px;
+            }
+
+        }
+
+
+
+
+
+    }
+
+    .newsLetter {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: right;
+
+        h3 {
+
+            font-size: 28px;
+            font-weight: 700;
+
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1rem;
+
+            input {
+                padding: 20px;
+                background-color: $light-grey;
+                height: 50px;
+                width: 370px;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 300px;
+            }
+
+            button {
+                background-color: $blue-grey;
+                color: white;
+                font-size: 18px;
+                border: none;
+                border-radius: 5px;
+                text-transform: uppercase;
+                height: 40px;
+                width: 185px;
+            }
+        }
+
+    }
+
+
+    .footerLogo {
+        font-family: $header;
+        font-size: 42px;
+        font-weight: 300;
+        text-shadow: 4px 3px 0px #0000004D;
+
+
+    }
+
+
+}

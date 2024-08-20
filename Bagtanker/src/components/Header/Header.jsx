@@ -5,11 +5,11 @@ import CategoryNav from '../CategoryNav/CategoryNav';
 const Header = () => {
 
     const navItems = [
-        { path: "/rundstykker", name: 'RUNDSTYKKER' },
-        { path: "/baguettes", name: 'BAGUETTES' },
-        { path: "/franskbrød", name: 'FRANSKBRØD' },
-        { path: "/kager", name: 'KAGER' },
-        { path: "/rugbrød", name: 'RUGBRØD' }
+        { path: "/home/produkter/rundstykker", name: 'RUNDSTYKKER' },
+        { path: "/home/produkter/baguettes", name: 'BAGUETTES' },
+        { path: "/home/produkter/franskbrød", name: 'FRANSKBRØD' },
+        { path: "/home/produkter/kager", name: 'KAGER' },
+        { path: "/home/produkter/rugbrød", name: 'RUGBRØD' }
     ];
 
     return (
