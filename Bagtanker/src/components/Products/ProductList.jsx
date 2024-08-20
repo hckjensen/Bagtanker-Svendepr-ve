@@ -50,7 +50,7 @@ const ProductList = () => {
 
     return (
         <section className={styles.container}>
-            <p className={styles.breadcrumb}> <span>Du er her:</span> {home} / {produkter} / {category}</p>
+            <p className={styles.breadcrumb}> <span>Du er her: </span> {home} / {produkter} / {category}</p>
             <h3>{category}</h3>
             <section className={styles.productGrid}>
                 {products.map(product => (

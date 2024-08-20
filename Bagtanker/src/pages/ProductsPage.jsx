@@ -1,13 +1,11 @@
-import { useParams } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
+import styles from '../components/Products/Products.module.scss'
 
 const ProductsPage = () => {
 
-    const { category } = useParams()
-
     return (
         <>
-
-            <h3>{category}</h3>
+            <Outlet />
         </>
     )
 }

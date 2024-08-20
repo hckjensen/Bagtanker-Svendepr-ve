@@ -2,6 +2,7 @@ import styles from './Products.module.scss';
 import PropTypes from 'prop-types';
 import { SupabaseContext } from '../../providers/supabaseProvider';
 import { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
 
@@ -43,7 +44,8 @@ const ProductCard = ({ product }) => {
                     <p>{product.teaser}</p>
                 </div>
                 <div className={styles.bottomContainer}>
-                    <button> Læs mere</button>
+                    <Link to={`${product.slug}`} className={styles.button}> Læs mere</Link>
+
                     <div className={styles.likes}>
                         <p>antal </p>
                         <p>likes</p>
