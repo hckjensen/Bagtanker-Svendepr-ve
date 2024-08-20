@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Righteous&family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
 // Colors
 
 $dark-grey: #323540;
@@ -5,3 +6,10 @@ $blue-grey: #5F657B;
 $light-grey: #F5F5F0;
 $yellow: #D89F5F;
 $gold: #B7A968;
+
+// Fonts
+
+
+$main: 'Open Sans', sans-serif;
+$secondary: 'Roboto Flex', sans-serif; //Har brugt Roboto Flex istedet for Open Sans Hebrew Condensed, da jeg ikke kunne finde den på Google Fonts
+$header: 'Irish Grover', cursive;

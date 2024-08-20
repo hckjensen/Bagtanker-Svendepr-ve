@@ -1,18 +1,19 @@
-import styles from './Hamburger.module.css';
-
+import { useState } from 'react';
+import styles from './Hamburger.module.scss'; // Assuming you have a CSS module
 
 const Hamburger = () => {
+    const [isActive, setIsActive] = useState(false);
 
-    function menuBtnFunction(menuBtn) {
-        menuBtn.classList.toggle("active");
-    }
+    const toggleMenu = () => {
+        setIsActive(!isActive);
+    };
 
     return (
-        <div className={styles.menuBtn5} onClick={menuBtnFunction(this)}>
+        <div className={`${styles.menuBtn5} ${isActive ? styles.active : ''}`} onClick={toggleMenu}>
             <span></span>
             <span></span>
         </div>
-    )
-}
+    );
+};
 
-export default Hamburger
+export default Hamburger;
