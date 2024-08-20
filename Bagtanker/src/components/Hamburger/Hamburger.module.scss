@@ -1,0 +1,84 @@
+.menuBtn5 {
+    height: 32px;
+    width: 28px;
+    cursor: pointer;
+}
+
+.menuBtn5 span:nth-child(1),
+.menuBtn5 span:nth-child(1)::before,
+.menuBtn5 span:nth-child(1)::after {
+    background: #fff;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    margin-top: 13px;
+
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.menuBtn5 span:nth-child(1)::before {
+    margin-top: -12px;
+
+    -webkit-transition: .3s ease-in-out .3s;
+    -moz-transition: .3s ease-in-out .3s;
+    -o-transition: .3s ease-in-out .3s;
+    transition: .3s ease-in-out .3s;
+}
+
+.menuBtn5 span:nth-child(1)::after {
+    margin-top: 12px;
+
+    -webkit-transition: .3s ease-in-out .3s;
+    -moz-transition: .3s ease-in-out .3s;
+    -o-transition: .3s ease-in-out .3s;
+    transition: .3s ease-in-out .3s;
+}
+
+.menuBtn5 span:nth-child(2) {
+    background: #fff;
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 3px;
+    margin-top: 13px;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.menuBtn5.active span:nth-child(1)::before,
+.menuBtn5.active span:nth-child(1)::after {
+    margin-top: 0;
+}
+
+.menuBtn5.active span:nth-child(1) {
+    -webkit-transition: .5s ease-in-out .6s;
+    -moz-transition: .5s ease-in-out .6s;
+    -o-transition: .5s ease-in-out .6s;
+    transition: .5s ease-in-out .5s;
+
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.menuBtn5.active span:nth-child(2) {
+    width: 40px;
+
+    -webkit-transition: .3s ease-in-out .8s;
+    -moz-transition: .3s ease-in-out .8s;
+    -o-transition: .3s ease-in-out .8s;
+    transition: .3s ease-in-out .8s;
+}
