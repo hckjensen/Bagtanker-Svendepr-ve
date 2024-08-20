@@ -4,13 +4,7 @@ import CategoryNav from '../CategoryNav/CategoryNav';
 
 const Header = () => {
 
-    const navItems = [
-        { path: "/home/produkter/rundstykker", name: 'RUNDSTYKKER' },
-        { path: "/home/produkter/baguettes", name: 'BAGUETTES' },
-        { path: "/home/produkter/franskbrød", name: 'FRANSKBRØD' },
-        { path: "/home/produkter/kager", name: 'KAGER' },
-        { path: "/home/produkter/rugbrød", name: 'RUGBRØD' }
-    ];
+
 
     return (
         <header className={styles.header}>
@@ -24,7 +18,7 @@ const Header = () => {
                 </div>
 
             </section>
-            <CategoryNav items={navItems} />
+            <CategoryNav />
         </header>
     )
 

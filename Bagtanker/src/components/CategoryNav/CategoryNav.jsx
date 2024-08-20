@@ -1,15 +1,42 @@
 import styles from './CategoryNav.module.scss';
+import { useContext, useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-const CategoryNav = ({ items }) => {
+import { SupabaseContext } from '../../providers/supabaseProvider';
+
+const CategoryNav = () => {
+
+    const supabase = useContext(SupabaseContext)
+    const [categories, setCategories] = useState([])
+
+    const fetchCategories = async () => {
+
+        const { data, error } = await supabase
+            .from('categories')
+            .select('title, id')
+
+        if (error) {
+            console.log(error)
+        } else {
+            setCategories(data)
+            console.log(categories);
+
+        }
+
+    }
+
+    useEffect(() => {
+        fetchCategories();
+        console.log(categories);
+
+    }, [])
 
     return (
         <nav className={styles.categoryNav}>
             <ul className={styles.list}>
-                {items.map(item => (
-                    <li className={styles.listItem} key={item.path}>
-                        <NavLink to={item.path}>{item.name}</NavLink>
+                {categories.map(category => (
+                    <li className={styles.listItem} key={category.id}>
+                        <NavLink to={`./produkter/${category.title.toLowerCase()}`}>{category.title}</NavLink>
                     </li>
                 ))}
             </ul>
@@ -17,15 +44,5 @@ const CategoryNav = ({ items }) => {
     )
 
 }
-
-CategoryNav.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            name: PropTypes.string.isRequired,
-            path: PropTypes.string.isRequired,
-        })
-    ).isRequired,
-};
-
 
 export default CategoryNav
