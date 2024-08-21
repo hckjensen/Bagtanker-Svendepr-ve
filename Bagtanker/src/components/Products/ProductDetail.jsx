@@ -7,7 +7,7 @@ const ProductDetail = () => {
 
     return (
         <div>
-            <p>hello</p>
+            <p>{slug}</p>
         </div>
     );
 };
