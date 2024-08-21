@@ -1,0 +1,32 @@
+@use "../../styles/variables" as *;
+
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    background-color: $light-grey;
+
+    .recipeInfo {
+        background-color: #d7d7d2;
+    }
+
+
+    h3 {
+        font-size: 22px;
+        font-weight: 700;
+        background-color: $blue-grey;
+        color: white;
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+    }
+
+    p {
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 300;
+        border-bottom: 1px solid #b1b1b1;
+        color: $blue-grey;
+    }
+
+}

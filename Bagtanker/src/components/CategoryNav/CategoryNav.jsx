@@ -19,7 +19,7 @@ const CategoryNav = () => {
             console.log(error)
         } else {
             setCategories(data)
-            console.log(categories);
+
 
         }
 
@@ -27,7 +27,7 @@ const CategoryNav = () => {
 
     useEffect(() => {
         fetchCategories();
-        console.log(categories);
+
 
     }, [])
 

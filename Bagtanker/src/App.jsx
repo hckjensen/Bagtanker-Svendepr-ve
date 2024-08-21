@@ -20,6 +20,7 @@ function App() {
               <Route path=":category/:slug" element={<ProductDetail />} />
 
 
+
             </Route>
           </Route>
 

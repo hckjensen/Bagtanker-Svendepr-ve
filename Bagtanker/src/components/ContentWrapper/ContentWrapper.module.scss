@@ -1,0 +1,14 @@
+.contentWrapper {
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    padding: 60px 120px;
+
+    h1 {
+        font-size: 36px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+}

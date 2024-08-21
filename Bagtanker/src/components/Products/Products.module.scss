@@ -1,37 +1,14 @@
 @use "../../styles/variables" as *;
 
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    padding: 60px 120px;
 
 
-    h3 {
-        font-size: 36px;
-        font-weight: 700;
-        text-transform: capitalize;
-    }
+.productGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
 
-    .breadcrumb {
-        font-size: 16px;
-        text-transform: capitalize;
-
-        span {
-            text-transform: none;
-            margin-right: 20px;
-        }
-
-    }
-
-    .productGrid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 3rem;
-
-    }
 }
+
 
 
 .productCard {
@@ -135,4 +112,26 @@
 
 
 
+}
+
+.productDetail {
+    display: flex;
+    gap: 20rem;
+
+    .content {
+        width: 60%;
+
+        img {
+            float: left;
+            width: 450px;
+            height: 450px;
+            object-fit: cover;
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            white-space: pre-wrap;
+        }
+    }
 }

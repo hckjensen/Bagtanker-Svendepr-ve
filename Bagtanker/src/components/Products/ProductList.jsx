@@ -2,13 +2,14 @@ import { useParams } from 'react-router-dom'
 import { useContext, useEffect, useState } from 'react'
 import styles from './Products.module.scss'
 import ProductCard from './ProductCard'
+import ContentWrapper from '../ContentWrapper/ContentWrapper'
 import { SupabaseContext } from '../../providers/supabaseProvider';
 
 const ProductList = () => {
     const supabase = useContext(SupabaseContext)
 
     const [products, setProducts] = useState([])
-    const { home, category, produkter } = useParams()
+    const { category } = useParams()
 
     const fetchProducts = async () => {
         console.log("category:", category)
@@ -49,17 +50,16 @@ const ProductList = () => {
     }, [category])
 
     return (
-        <section className={styles.container}>
-            <p className={styles.breadcrumb}> <span>Du er her: </span> {home} / {produkter} / {category}</p>
-            <h3>{category}</h3>
+        <ContentWrapper title={category}>
             <section className={styles.productGrid}>
                 {products.map(product => (
                     <ProductCard key={product.id} product={product} />
                 ))}
 
             </section>
+        </ContentWrapper>
 
-        </section>
+
     )
 }
 export default ProductList
