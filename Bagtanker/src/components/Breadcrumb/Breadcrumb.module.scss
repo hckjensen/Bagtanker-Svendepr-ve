@@ -1,0 +1,19 @@
+@use "../../styles/variables" as *;
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    font-size: 16px;
+    color: $blue-grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+
+    a {
+        color: $blue-grey;
+        text-decoration: none;
+
+    }
+
+
+}

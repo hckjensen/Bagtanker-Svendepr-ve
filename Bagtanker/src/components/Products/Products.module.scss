@@ -135,3 +135,93 @@
         }
     }
 }
+
+
+.comments {
+
+
+    h3 {
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .commentContainer {
+        display: flex;
+        gap: 20px;
+        margin-top: 20px;
+        height: 200px;
+        border-bottom: 1px solid #b1b1b1;
+
+        .userImage {
+            width: 190px;
+            height: 190px;
+            border-radius: 50%;
+            background-color: $light-grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+
+        .comment {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 15px;
+            margin-left: 50px;
+
+            .userName {
+                font-size: 24px;
+                font-weight: 700;
+            }
+
+
+        }
+
+        .commentForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            input {
+                padding: 10px;
+                background-color: $light-grey;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            textarea {
+                padding: 10px;
+                background-color: $light-grey;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: $yellow;
+                color: white;
+                font-size: 16px;
+                font-weight: 700;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.1s;
+
+                &:hover {
+                    background-color: $dark-grey;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import ContentWrapper from '../ContentWrapper/ContentWrapper';
 import Recipe from '../Recipe/Recipe';
+import ProductComments from './ProductComments';
 import { useContext, useState, useEffect } from 'react';
 import { SupabaseContext } from '../../providers/supabaseProvider';
 import styles from './Products.module.scss';
@@ -64,6 +65,7 @@ const ProductDetail = () => {
                 </ section>
                 <Recipe amount={product.amount} duration={product.duration} productId={product.id} />
             </section>
+            <ProductComments productId={product.id} />
         </ContentWrapper>
     );
 };

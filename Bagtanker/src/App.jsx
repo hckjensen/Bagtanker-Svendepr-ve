@@ -20,6 +20,7 @@ function App() {
           <Route path="/" element={<LandingPage />} />
           <Route path=":home" element={<Layout />}>
             <Route path=":produkter" element={<ProductsPage />}>
+              <Route index element={<ProductList />} />
               <Route path=":category" element={<ProductList />} />
               <Route path=":category/:slug" element={<ProductDetail />} />
             </Route>
