@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Hamburger from '../Hamburger/Hamburger';
 import { useState } from 'react';
 
-const SideNav = () => {
+const SideNav = ({ items }) => {
     const [isVisible, setIsVisible] = useState(false);
 
     const toggleSideNav = () => {
@@ -19,21 +19,18 @@ const SideNav = () => {
                 </div>
 
                 <ul>
-                    <li>
-                        <NavLink to="/" >Forside</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/home/produkter/rundstykker" >Produkter</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/home/nyheder" >Nyheder</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/home/kontakt" >Kontakt</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/home/login" >Login</NavLink>
-                    </li>
+
+                    {items.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <NavLink to={item.link} activeClassName={styles.active} exact onClick={toggleSideNav}>
+                                    <div className={styles.linkWrapper}>
+                                        {item.name}
+                                    </div>
+                                </NavLink>
+                            </li>
+                        );
+                    })}
 
                 </ul>
 

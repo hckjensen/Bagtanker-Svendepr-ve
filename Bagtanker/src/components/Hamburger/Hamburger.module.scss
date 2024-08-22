@@ -1,16 +1,21 @@
 // Fundet på CodePen https://codepen.io/codingtuting/pen/YzKvwZX
-
+:root {
+    --hamburger-bg-color: #fff; // Default color
+}
 
 .menuBtn5 {
     height: 32px;
     width: 28px;
     cursor: pointer;
+    position: relative; // Ensure position is relative for absolute positioning of spans
 }
+
+
 
 .menuBtn5 span:nth-child(1),
 .menuBtn5 span:nth-child(1)::before,
 .menuBtn5 span:nth-child(1)::after {
-    background: #fff;
+    background: var(--hamburger-bg-color);
     content: '';
     position: absolute;
     width: 40px;
@@ -42,7 +47,7 @@
 }
 
 .menuBtn5 span:nth-child(2) {
-    background: #fff;
+    background: var(--hamburger-bg-color);
     content: '';
     position: absolute;
     width: 0px;
