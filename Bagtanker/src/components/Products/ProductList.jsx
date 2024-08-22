@@ -11,46 +11,58 @@ const ProductList = () => {
     const [products, setProducts] = useState([])
     const { category } = useParams()
 
+
     const fetchProducts = async () => {
-        console.log("category:", category)
-        // Fetch category UUID
-        const { data: categoryData, error: categoryError } = await supabase
-            .from('categories')
-            .select('id')
-            .eq('title', category)
+        if (category) {
+            console.log("category:", category);
+            // Fetch category UUID
+            const { data: categoryData, error: categoryError } = await supabase
+                .from('categories')
+                .select('id')
+                .eq('title', category);
 
-        console.log("CategoryData:", categoryData)
-        if (categoryError) {
-            console.log(categoryError)
-            return
-        }
+            console.log("CategoryData:", categoryData);
+            if (categoryError) {
+                console.log(categoryError);
+                return;
+            }
 
+            const categoryId = categoryData[0].id;
+            console.log(categoryId);
 
-        const categoryId = categoryData[0].id
-        console.log(categoryId);
+            // Fetch products using the category UUID
+            const { data: productsData, error: productsError } = await supabase
+                .from('products')
+                .select('*, category_product_rel!inner(*)')
+                .eq('category_product_rel.category_id', categoryId);
 
-
-        // Fetch products using the category UUID
-        const { data: productsData, error: productsError } = await supabase
-            .from('products')
-            .select('*, category_product_rel!inner(*)')
-            .eq('category_product_rel.category_id', categoryId)
-
-        if (productsError) {
-            console.log(productsError)
+            if (productsError) {
+                console.log(productsError);
+            } else {
+                setProducts(productsData);
+                console.log(products);
+            }
         } else {
-            setProducts(productsData)
-            console.log(products);
+            // Fetch all products if no category is provided
+            const { data: productsData, error: productsError } = await supabase
+                .from('products')
+                .select('*');
 
+            if (productsError) {
+                console.log(productsError);
+            } else {
+                setProducts(productsData);
+                console.log(products);
+            }
         }
-    }
+    };
 
     useEffect(() => {
         fetchProducts()
     }, [category])
 
     return (
-        <ContentWrapper title={category}>
+        <ContentWrapper title={category || 'Alle Produkter'}>
             <section className={styles.productGrid}>
                 {products.map(product => (
                     <ProductCard key={product.id} product={product} />

@@ -1,5 +1,5 @@
 import styles from './Header.module.scss';
-import Hamburger from '../Hamburger/Hamburger';
+
 import CategoryNav from '../CategoryNav/CategoryNav';
 
 const Header = () => {
@@ -12,9 +12,6 @@ const Header = () => {
                 <div className={styles.logo}>
                     <h1 className={styles.logoText}>Bagtanker</h1>
                     <div className={styles.logoEclipse}></div>
-                </div>
-                <div className={styles.hamburger}>
-                    <Hamburger />
                 </div>
 
             </section>
