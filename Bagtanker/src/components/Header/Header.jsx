@@ -1,6 +1,7 @@
 import styles from './Header.module.scss';
 
 import CategoryNav from '../CategoryNav/CategoryNav';
+import Logo from './Logo';
 
 const Header = () => {
 
@@ -9,10 +10,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <section className={styles.banner}>
-                <div className={styles.logo}>
-                    <h1 className={styles.logoText}>Bagtanker</h1>
-                    <div className={styles.logoEclipse}></div>
-                </div>
+                <Logo title="Bagtanker" />
 
             </section>
             <CategoryNav />

@@ -36,7 +36,7 @@
         background-size: cover;
         height: 200px;
         animation: backgroundCycle 50s infinite;
-        padding: 50px;
+
 
         .logo {
             position: relative;
@@ -75,6 +75,36 @@
             }
 
         }
+
+    }
+}
+
+.logo {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+    .logoText {
+        position: relative;
+        font-family: $header;
+        font-size: 80px;
+        font-weight: 400;
+        color: $dark-grey;
+        text-shadow: 4px 3px 0px #0000004D;
+        z-index: 3;
+        user-select: none;
+    }
+
+    .logoEclipse {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: $yellow;
+        border-radius: 50%;
+        top: 10px;
+        left: 70px;
+        z-index: 2;
+        box-shadow: 0px 0px 10px 0px #00000040 inset;
 
     }
 }

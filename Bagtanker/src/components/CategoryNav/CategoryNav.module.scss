@@ -24,6 +24,11 @@
                 font-family: vars.$main;
                 font-weight: 300;
                 font-size: 24px;
+
+                &.active {
+
+                    color: vars.$yellow; // or any other style you prefer for the active state
+                }
             }
         }
     }

@@ -36,7 +36,12 @@ const CategoryNav = () => {
             <ul className={styles.list}>
                 {categories.map(category => (
                     <li className={styles.listItem} key={category.id}>
-                        <NavLink to={`produkter/${category.title.toLowerCase()}`}>{category.title}</NavLink>
+                        <NavLink
+                            to={`produkter/${category.title.toLowerCase()}`}
+                            className={({ isActive }) => isActive ? styles.active : ''}
+                        >
+                            {category.title}
+                        </NavLink>
                     </li>
                 ))}
             </ul>

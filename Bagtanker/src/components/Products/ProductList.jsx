@@ -9,7 +9,7 @@ const ProductList = () => {
     const supabase = useContext(SupabaseContext)
 
     const [products, setProducts] = useState([])
-    const { category } = useParams()
+    const { category = 'rundstykker' } = useParams()
 
 
     const fetchProducts = async () => {
